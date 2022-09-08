@@ -1,0 +1,72 @@
+.currencies {
+  input {
+    height: 54px;
+    width: 200px;
+    display: block;
+    padding: 10px 27px;
+    margin: 20px 0 30px;
+    border-radius: 27px;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    color: $mainColor;
+    transition: 0.3s;
+    border: 2px solid transparent;
+    &:focus {
+      width: 100%;
+      border-color: $pink;
+    }
+  }
+  .currencies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+    .currncy-card {
+      background-color: $bgSecondary;
+      height: 250px;
+      color: $textPrimary;
+      text-decoration: none;
+      position: relative;
+      transition: 0.3s;
+      &::before {
+        content: "";
+        transition: 0.3s;
+        height: 2px;
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: $pink;
+      }
+      &:hover {
+        // box-shadow: 0 0 8px #fff;
+        transform: translateY(-8px);
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      .title {
+        display: flex;
+        font-size: 18px;
+        height: 60px;
+        padding: 20px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.5px solid rgba(166, 150, 150, 0.456);
+        .image {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .pricing {
+        padding: 20px;
+        p {
+          font-size: 16px;
+          color: $textAlt;
+        }
+      }
+    }
+  }
+}

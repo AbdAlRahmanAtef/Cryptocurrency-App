@@ -1,0 +1,99 @@
+.navbar {
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  width: 250px;
+  background-color: $textPrimary;
+  overflow: hidden;
+  .logo {
+    margin-bottom: 10px;
+    padding: 15px;
+    img {
+      width: 80px;
+      border-radius: 50%;
+    }
+  }
+  .toggle {
+    display: none;
+    color: $bgPrimary;
+    font-size: 25px;
+    transition: 0.3s;
+    cursor: pointer;
+    &.appeared {
+      color: $pink;
+    }
+    &:hover {
+      color: $pinkAlt;
+    }
+  }
+  .page {
+    color: $textAlt;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+    padding: 15px;
+    height: 54px;
+    width: 100%;
+    text-decoration: none;
+    font-size: 18px;
+    &.active {
+      background-color: $pink;
+      color: $lightBlue;
+      &:hover {
+        color: $bgSecondary;
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .icon {
+        transition: 0.3s;
+      }
+    }
+    &:hover {
+      // background-color: $pink;
+      color: $pink;
+      .icon {
+        color: $lightBlue;
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    .logo {
+      padding: 0;
+      margin-bottom: 0 !important;
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .toggle {
+      display: block;
+    }
+    .pages {
+      transform: translateX(120%);
+      position: fixed;
+      transition: 0.3s;
+      right: 0;
+      height: calc(100vh - 90px);
+      width: 250px;
+      background-color: $textPrimary;
+      top: 90px;
+      &.on {
+        transition: 0.3s;
+        transform: translateX(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@mixin flex {
+  background-color: $textPrimary;
+  margin-bottom: 10px;
+  padding: 8px 20px;
+  display: flex;
+  color: $textAlt;
+  justify-content: space-between;
+  align-items: center;
+}
+.details {
+  color: #fff;
+  h3 {
+    font-size: 25px;
+    color: $pink;
+    margin-bottom: 15px;
+  }
+  .title {
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid $textAlt;
+    h2 {
+      display: block;
+      text-align: center;
+      color: $pink;
+      font-size: 35px;
+      font-weight: 900;
+    }
+    p {
+      color: $textAlt;
+      font-size: 18px;
+    }
+  }
+  .stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    & > div {
+      flex: 1;
+      .heading {
+        p {
+          color: $textAlt;
+          font-size: 18px;
+          line-height: 1.5;
+          margin-bottom: 15px;
+        }
+      }
+      .stats {
+        padding: 15px 0;
+        .stat {
+          @include flex;
+          p:first-child {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            span {
+              font-size: 20px;
+            }
+          }
+          p {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  .more-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .description {
+      flex: 1;
+      color: $textAlt;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: $pink;
+      &:hover {
+        color: $textAlt;
+      }
+    }
+    .coin-links {
+      flex: 1;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+      .coin-link {
+        @include flex;
+        span {
+          font-size: 20px;
+          text-transform: capitalize;
+        }
+        a {
+          font-size: 18px;
+          color: $pink;
+          text-transform: capitalize;
+          &:hover {
+            color: $textAlt;
+          }
+        }
+      }
+    }
+  }
+}
